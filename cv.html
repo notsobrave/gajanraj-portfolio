@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>CV - Gajanraj Mohanaraj</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.5;
+      color: #1a1a1a;
+      background: #fff;
+    }
+    
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 72mm 1fr;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      background: #0f172a;
+      color: #fff;
+      padding: 32px 24px;
+    }
+    
+    .photo-placeholder {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+    }
+    
+    .name {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    .name h1 {
+      font-size: 18pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    
+    .name .firstname { color: #fff; }
+    .name .lastname { color: #10b981; }
+    
+    .title {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 9pt;
+      margin-bottom: 32px;
+      font-weight: 500;
+    }
+    
+    .sidebar-section {
+      margin-bottom: 28px;
+    }
+    
+    .sidebar-section h2 {
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #10b981;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 8.5pt;
+      color: #e2e8f0;
+    }
+    
+    .contact-icon {
+      width: 16px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    
+    .skill-group {
+      margin-bottom: 16px;
+    }
+    
+    .skill-group h3 {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    
+    .skill-tag {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.15);
+      color: #6ee7b7;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 7.5pt;
+      margin: 2px 2px 2px 0;
+    }
+    
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 8.5pt;
+    }
+    
+    .lang-level {
+      color: #10b981;
+      font-weight: 500;
+    }
+    
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    
+    .interest-tag {
+      background: rgba(255,255,255,0.05);
+      color: #94a3b8;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 7.5pt;
+    }
+    
+    /* Main Content */
+    .main {
+      padding: 32px 28px;
+      background: #fff;
+    }
+    
+    .main-section {
+      margin-bottom: 28px;
+    }
+    
+    .main-section h2 {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #10b981;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .main-section h2::before {
+      content: '';
+      width: 4px;
+      height: 16px;
+      background: #10b981;
+      border-radius: 2px;
+    }
+    
+    /* Profile */
+    .profile-text {
+      color: #475569;
+      line-height: 1.7;
+      font-size: 9pt;
+    }
+    
+    /* Timeline items */
+    .timeline-item {
+      position: relative;
+      padding-left: 16px;
+      padding-bottom: 20px;
+      border-left: 2px solid #e2e8f0;
+    }
+    
+    .timeline-item:last-child {
+      padding-bottom: 0;
+      border-left-color: transparent;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 4px;
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+    }
+    
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4px;
+    }
+    
+    .timeline-title {
+      font-weight: 600;
+      font-size: 10pt;
+      color: #1e293b;
+    }
+    
+    .timeline-date {
+      font-size: 8pt;
+      color: #10b981;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    
+    .timeline-company {
+      font-size: 9pt;
+      color: #3b82f6;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    
+    .timeline-desc {
+      color: #64748b;
+      font-size: 8.5pt;
+      line-height: 1.6;
+    }
+    
+    .timeline-desc ul {
+      margin-left: 14px;
+      margin-top: 4px;
+    }
+    
+    .timeline-desc li {
+      margin-bottom: 3px;
+    }
+    
+    /* Certifications */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    
+    .cert-item {
+      background: #f8fafc;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border-left: 3px solid #10b981;
+    }
+    
+    .cert-name {
+      font-weight: 600;
+      font-size: 8.5pt;
+      color: #1e293b;
+    }
+    
+    .cert-detail {
+      font-size: 7.5pt;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="photo-placeholder">GM</div>
+      
+      <div class="name">
+        <h1>
+          <span class="firstname">Gajanraj</span><br>
+          <span class="lastname">MOHANARAJ</span>
+        </h1>
+      </div>
+      <div class="title">Consultant Cybersécurité & GRC</div>
+      
+      <div class="sidebar-section">
+        <h2>Contact</h2>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>Marly-La-Ville (95670)<br>Île-de-France</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <span>+33 6 XX XX XX XX</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <span>gajanraj@email.com</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">💼</span>
+          <span>linkedin.com/in/gajanraj</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🚗</span>
+          <span>Permis B • Véhiculé</span>
+        </div>
+      </div>
+      
+      <div class="sidebar-section">
+        <h2>Compétences</h2>
+        
+        <div class="skill-group">
+          <h3>GRC & Conformité</h3>
+          <span class="skill-tag">ISO 27001</span>
+          <span class="skill-tag">ISO 27005</span>
+          <span class="skill-tag">EBIOS RM</span>
+          <span class="skill-tag">TPRM</span>
+          <span class="skill-tag">Audits</span>
+        </div>
+        
+        <div class="skill-group">
+          <h3>Sécurité Offensive</h3>
+          <span class="skill-tag">Metasploit</span>
+          <span class="skill-tag">Wireshark</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">Pentest</span>
+        </div>
+        
+        <div class="skill-group">
+          <h3>Développement</h3>
+          <span class="skill-tag">PHP/Laravel</span>
+          <span class="skill-tag">Symfony</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">MySQL</span>
+        </div>
+      </div>
+      
+      <div class="sidebar-section">
+        <h2>Langues</h2>
+        <div class="lang-item">
+          <span>Français</span>
+          <span class="lang-level">Natif</span>
+        </div>
+        <div class="lang-item">
+          <span>Tamoul</span>
+          <span class="lang-level">Natif</span>
+        </div>
+        <div class="lang-item">
+          <span>Anglais</span>
+          <span class="lang-level">C1</span>
+        </div>
+      </div>
+      
+      <div class="sidebar-section">
+        <h2>Centres d'intérêt</h2>
+        <div class="interests">
+          <span class="interest-tag">🎸 Guitare</span>
+          <span class="interest-tag">🥊 MMA</span>
+          <span class="interest-tag">⚽ Football</span>
+          <span class="interest-tag">🏸 Badminton</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- MAIN CONTENT -->
+    <div class="main">
+      <div class="main-section">
+        <h2>Profil</h2>
+        <p class="profile-text">
+          Consultant cybersécurité de 22 ans spécialisé en Gouvernance, Risques et Conformité (GRC). 
+          Fort de 3 années d'expérience en alternance, j'accompagne les entreprises des secteurs 
+          financier et défense dans leur mise en conformité réglementaire et la sécurisation de 
+          leurs systèmes d'information. Expert ISO 27001 avec une solide expérience en gestion 
+          des risques tiers (TPRM).
+        </p>
+      </div>
+      
+      <div class="main-section">
+        <h2>Expérience Professionnelle</h2>
+        
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-title">Consultant Cybersécurité</span>
+            <span class="timeline-date">2024 — Présent</span>
+          </div>
+          <div class="timeline-company">Wcomply • Secteur Finance & Défense</div>
+          <div class="timeline-desc">
+            <ul>
+              <li>Accompagnement à la mise en conformité ISO 27001 pour clients grands comptes</li>
+              <li>Déploiement et paramétrage de solutions TPRM (Third Party Risk Management)</li>
+              <li>Réalisation d'audits internes et analyse des écarts de conformité</li>
+              <li>Paramétrage du module RISK et formation des équipes clients</li>
+              <li>Rédaction de politiques de sécurité et procédures opérationnelles</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-title">Développeur Full-Stack</span>
+            <span class="timeline-date">2023 — 2024</span>
+          </div>
+          <div class="timeline-company">Agence Créative • Paris</div>
+          <div class="timeline-desc">
+            <ul>
+              <li>Développement d'applications web sécurisées (Symfony, Laravel)</li>
+              <li>Implémentation des bonnes pratiques de sécurité applicative (OWASP)</li>
+              <li>Collaboration cross-fonctionnelle avec les équipes design et marketing</li>
+              <li>Optimisation des performances et revue de code</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="main-section">
+        <h2>Formation</h2>
+        
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-title">Master Expert Management SI & Data</span>
+            <span class="timeline-date">En cours</span>
+          </div>
+          <div class="timeline-company">Epitech</div>
+          <div class="timeline-desc">
+            Spécialisation en protection des systèmes d'information, gouvernance IT et gestion des risques cyber.
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-title">Titre Développeur Back-end</span>
+            <span class="timeline-date">Obtenu</span>
+          </div>
+          <div class="timeline-company">Epitech</div>
+          <div class="timeline-desc">
+            Formation technique approfondie en développement serveur et architectures sécurisées.
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-title">Bachelor Cybersécurité</span>
+            <span class="timeline-date">Obtenu</span>
+          </div>
+          <div class="timeline-company">ESGI - École Supérieure de Génie Informatique</div>
+          <div class="timeline-desc">
+            Formation complète en cybersécurité : aspects techniques, juridiques et managériaux.
+          </div>
+        </div>
+      </div>
+      
+      <div class="main-section">
+        <h2>Certifications & Formations</h2>
+        <div class="cert-grid">
+          <div class="cert-item">
+            <div class="cert-name">ISO 27001 Lead Implementer</div>
+            <div class="cert-detail">En préparation</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Analyse de risques EBIOS RM</div>
+            <div class="cert-detail">Formation certifiante</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">TPRM Fundamentals</div>
+            <div class="cert-detail">Wcomply Academy</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Sécurité Offensive</div>
+            <div class="cert-detail">Metasploit & Pentesting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
